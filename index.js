@@ -48,8 +48,7 @@ app.get("/edit", (req,res) => {
 })
 
 app.post("/edit", (req,res) => {
-  console.log("putting")
-  var updatePost = req.body;
+  var updatePost = req.query;
   const id = parseInt(req.query["id"])
 
   var posts = readJsonFile();
