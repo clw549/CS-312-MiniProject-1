@@ -37,7 +37,6 @@ app.post("/", (req,res) => {
 //how to edit post is to use a get request (using html)
 app.get("/edit", (req,res) => {
   //const id = parseInt(req.query["id"]);
-  console.log(req)
   const id = req.query["id"]
 
   console.log(id)
@@ -48,13 +47,10 @@ app.get("/edit", (req,res) => {
 })
 
 app.post("/edit", (req,res) => {
-  var updatePost = req.query;
+  var updatePost = req.body;
   const id = parseInt(req.query["id"])
-
   var posts = readJsonFile();
-
   posts[id] = updatePost;
-
   makeJsonFile(posts);
   //making posts a key allows for easier handling (for me)
     //notice how I love modular things (too much)
