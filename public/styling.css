@@ -1,11 +1,89 @@
+* {
+  padding:.5rem;
+  color:lightcoral;
+}
+
+
 body {
+  /*fix the background so it doesnt scroll, do not reapeat and then make the background the right color and add a red gradient in the center. this creates the appealing (to me) background*/
+  background-attachment: fixed !important;
+  background-repeat: no-repeat;
   background-color: black;
-  color: seashell;
+  background-image: radial-gradient(
+    rgba(106, 0, 0, 0.75), black 100%
+  );
+  word-break: break-all;
+  hyphens:auto;
+  font-family:'Courier New', Courier, monospace;
+  text-shadow: .25rem 0rem 10px #db0000;
 }
 form {
-  flex:auto;
-  align-items: row;
+  display:flex;
+
+  flex:content  ;
+  align-items: column;
   flex-direction: column;
   justify-items: left;
+  color:grey;
+}
+label {
+  color:seagreen;
+}
+textarea {
+  color:seagreen;
+  background-color: #380505;
+  border-color: #db0000;
+  border-style:double;
+}
+
+button {
+  color:seagreen;
+  background-color: #380505;
+  border-color: brown;
+  height:fit-content;
+  width: fit-content;
+}
+
+div {
+  overflow-wrap: break-word;
+
+  display:flex;
+  outline-width: 2px;
+  width:fit-content;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#post {
+  overflow-wrap: break-word;
+
+  max-width: 30%;
+  flex-direction:column;
+  border:1mm;
+  border-style:double;
+  border-color:red;
+  border-bottom-color: darkred;
+  border-right-color: darkred;
+  word-wrap: break-word;
+  /* makes the boxes of the posts jankier (purposeful) */
+  height:fit-content;
 
 }
+
+#posts {
+  overflow-wrap: break-word;
+  display:flex;
+  
+}
+/*I am not sure what makes the underline*/
+h3 {
+
+  border-color:red;
+  border-bottom: 1mm;
+  border-right: 1mm;
+  border-style: double;
+  
+  border-bottom-color: darkred;
+  border-right-color:darkred;
+}
+

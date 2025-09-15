@@ -1,8 +1,26 @@
 <div>
-  <h3>
-    Title
-  </h3>
-  <body>
-    Content
-  </body>
+  <% if (locals.posts) { %>
+    <% var post %>
+    <% for (id in locals.posts) { %>
+      <% post = locals.posts[id];%>
+      <% if (post) { %>
+      <div id="post">
+          <h3><%= post.header %></h3>
+          <div>
+            <%= post.postBody %> <br>
+        </div>
+        <div>
+          <form method="get" action="/edit">
+            <input type="hidden" name="id" value=<%= id %>>
+            <button type="submit">edit</button>
+          </form>
+          <form method="post" action="/delete">
+            <input type="hidden" name="id" value=<%= id %>>
+            <button type="submit">delete</button>
+          </form>
+        </div>
+      </div>
+  <%}}} else { %>
+    No Posts
+  <%}%>
 </div>

@@ -6,13 +6,20 @@
 </head>
 <html>
   <body>
-    <form method="post">
-      <textarea></textarea>
-      <textarea></textarea>
-      <button type="submit">Post!</button>
-    </form>
+    <div>
+      <form method="post" action="/">
+        <label>Header:</label>
+        <textarea name="header"></textarea>
+        <label>Content:</label>
+          What do you want to say? What must the world know?
+        <textarea name="postBody"></textarea>
+        <button type="submit">Post!</button>
+      </form>
+    </div>
     <div id="posts">
-
+      <!-- The posts are made dynamically, check the post.ejs -->
+      <%- include("partials/post.ejs"); %>
+      <!-- I had to move it out of this file as it was too confusing (aka code readability yw) -->
     </div>
   </body>
 </html>

@@ -1,0 +1,15 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styling.css">
+  <title>Blogpost editing</title>
+</head>
+<html>
+  <body>
+    <form method="post" action=<%= "/edit?id="+locals.id %>>
+      <textarea id="header" name="header"><%= locals.post.header %></textarea>
+      <textarea id="body" name="postBody"><%= locals.post.postBody %></textarea>
+      <button type="submit">Save</button>
+    </form>
+  </body>
+</html>
