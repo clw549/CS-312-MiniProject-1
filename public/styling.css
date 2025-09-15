@@ -1,5 +1,11 @@
+body {
+  background-color: black;
+  color: seashell;
+}
 form {
   flex:auto;
   align-items: row;
-  background-color: black;
+  flex-direction: column;
+  justify-items: left;
+
 }
