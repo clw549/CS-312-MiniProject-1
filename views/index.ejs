@@ -8,12 +8,12 @@
   <body>
     <div>
       <form method="post" action="/">
-        <label>Name:<input type="text" name="name"></label>
+        <label>Name:<input required="true" type="text" name="name"></label>
         <label>Header:</label>
-        <textarea name="header"></textarea>
+        <textarea required="true" name="header"></textarea>
         <label>Content:</label>
           What do you want to say? What must the world know?
-        <textarea name="postBody"></textarea>
+        <textarea required="true" name="postBody"></textarea>
         <button type="submit">Post!</button>
       </form>
     </div>
