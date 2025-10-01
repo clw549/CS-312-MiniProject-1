@@ -5,7 +5,6 @@ import fs from "fs";
 const app = express();
 const port = 3000;
 
-
 //set up express
 //public folder holds public information (styling)
 app.use(express.static("public"));
@@ -26,6 +25,10 @@ app.listen(port, () => {
 app.post("/", (req,res) => {
   var newPost = req.body;
 
+  var date = new Date();
+  console.log(newPost)
+  newPost["date"] = date;
+  console.log(newPost)
   var posts = readJsonFile();
 
   posts.push(newPost);
@@ -39,15 +42,16 @@ app.get("/edit", (req,res) => {
   //const id = parseInt(req.query["id"]);
   const id = req.query["id"]
 
-  console.log(id)
 
   var posts = readJsonFile();
+  console.log(posts[id])
     
   res.render("edit.ejs", {post:posts[id], id:id})
 })
 
 app.post("/edit", (req,res) => {
   var updatePost = req.body;
+  console.log(updatePost);
   const id = parseInt(req.query["id"])
   var posts = readJsonFile();
   posts[id] = updatePost;
@@ -82,7 +86,6 @@ app.post("/delete", (req,res) => {
   //   } //end of "line" for if statement (wild)
     
   // }
-
   console.log(posts)
   makeJsonFile(posts)
 

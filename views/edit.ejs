@@ -6,9 +6,12 @@
 </head>
 <html>
   <body>
+      <p>name:<%= locals.post.name %></p>
     <form method="post" action=<%= "/edit?id="+locals.id %>>
       <textarea id="header" name="header"><%= locals.post.header %></textarea>
       <textarea id="body" name="postBody"><%= locals.post.postBody %></textarea>
+      <input type="hidden" name="name" value=<%= ""+locals.post.name %>>
+      <input type="hidden" name="date" value=<%= locals.post.date %>>
       <button type="submit">Save</button>
     </form>
   </body>

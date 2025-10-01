@@ -35,6 +35,13 @@ textarea {
   border-color: #db0000;
   border-style:double;
 }
+input {
+  color:seagreen;
+  background-color: #380505;
+  border-color: #db0000;
+  border-style: double;
+  width:100%;
+}
 
 button {
   color:seagreen;

@@ -5,6 +5,7 @@
       <% post = locals.posts[id];%>
       <% if (post) { %>
       <div id="post">
+          <div>Operator: <%= post.name %>,<br> Time: <%- post.date %></div>
           <h3><%= post.header %></h3>
           <div>
             <%= post.postBody %> <br>
